@@ -80,7 +80,7 @@ res.render('results', {
 });
 
 router.get('/about', function(req, res, next){
-  res.render('about', { name: "My awesome site"});
+  res.render('about', { name: 'Jeff', description: 'Currency converter using Node JS'});
 });
 
 module.exports = router;
