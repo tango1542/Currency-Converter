@@ -1,6 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var exchangeRates = require('../model/currencyDB')
+var exchangeRates = require('../model/currencyDB');
+const fixer = require('fixer-api');
+
+fixer.latest()
+.then((data) => {
+  console.log(data);
+});
+
+// fixer.latest({ base: 'USD', symbols: ['JPY'] })
+//   .then((data) => {
+//     console.log(data);
+//   });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -63,11 +74,11 @@ if (fromCurrency === "JPY" && toCurrency === "EUR") {
 
 var converted = amount * exchangeRates [exchRate];
 
-console.log(fromCurrency);
-console.log(toCurrency);
-console.log(amount);
-console.log(converted);
-console.log(exchRate);
+// console.log(fromCurrency);
+// console.log(toCurrency);
+// console.log(amount);
+// console.log(converted);
+// console.log(exchRate);
 
 res.render('results', {
   amount: amount,
