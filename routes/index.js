@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var exchangeRates = require('../model/currencyDB');
-const fixer = require('fixer-api');
+// const fixer = require('fixer-api');
 
-fixer.latest()
-.then((data) => {
-  console.log(data);
-});
+// fixer.latest()
+// .then((data) => {
+//   console.log(data);
+// });
 
 // fixer.latest({ base: 'USD', symbols: ['JPY'] })
 //   .then((data) => {
